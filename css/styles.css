@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Utilities */
+/* End Utitilies */
+#page {
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "header header header"
+    "nav projects projects"
+    "nav projects projects"
+    "nav projects projects"
+    "footer footer footer";
+  grid-template-columns: 1fr 6fr;
+}
+
+#site-header {
+  grid-area: header;
+  background-color: grey;
+}
+
+#navigation {
+  grid-area: nav;
+  background-color: bisque;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#projects {
+  grid-area: projects;
+  background-color: aquamarine;
+}
+
+#site-footer {
+  grid-area: footer;
+  background-color: cadetblue;
+}
+
+.logo {
+  padding: 10px;
+  align-items: flex-start;
+  order: 1;
+}
+
+.main-nav {
+  text-align: center;
+  order: 2;
+}
+
+.nav-item {
+  line-height: 1.6em;
+  background-color: aliceblue;
+}
