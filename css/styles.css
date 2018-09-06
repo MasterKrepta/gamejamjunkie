@@ -4,74 +4,132 @@
 	--primary: #226666;
 	--primary-light: #669999;
 	--primary-dark: #0d4d4d;
-
 	--secondary: #2e4272;
 	--secondary-light: #7887ab;
 	--secondary-dark: #162955;
-
 	--tern: #2d882d;
 	--tern-light: #88cc88;
 	--tern-dark: #116611;
 }
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
+#main>* {
+	padding: 20px;
+}
+
 body {
 	font-family: 'Lato', sans-serif;
+	background-color: var(--secondary-light);
+}
+
+p {
+	color: var(--tern-light);
 }
 
 a {
 	text-decoration: none;
+	color: var(--tern-dark);
+}
+
+a:hover {
+	color: var(--tern-light);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
 }
 
 /* Utilities */
+.container {
+	max-width: 75%;
+}
+
+.centered {
+	text-align: center;
+}
+
 /* End Utitilies */
 #page {
 	display: grid;
 	width: 100%;
-	grid-template-areas: "header header header" "nav projects projects" "nav projects projects" "nav projects projects"
-		"footer footer footer";
-	grid-template-columns: 1fr 6fr;
+	padding-left: 220px;
+	grid-template-areas:
+		"header header"
+		"main main"
+		"footer footer";
+	/* grid-template-columns: 1fr 1fr; */
+	/* grid-template-rows: 1fr 1fr; */
 }
 
 #site-header {
 	grid-area: header;
-	background-color: grey;
+	background-color: var(--secondary-dark);
 }
 
 #navigation {
 	grid-area: nav;
-	background-color: bisque;
-	height: 90vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
+	background-color: var(--secondary-light);
+	height: 100vh;
+	position: fixed;
 }
 
-#projects {
-	grid-area: projects;
-	background-color: aquamarine;
+#main {
+	grid-area: main;
+	max-width: 90%;
+}
+
+#about {
+	background-color: var(--primary);
+	display: flex;
+	height: 90vh;
+}
+
+#about h1,
+#about p {
+	padding-left: 25px;
+	text-align: right;
+}
+
+#games {
+	background-color: var(--primary);
+	height: 70vh;
+}
+
+#web-projects {
+	background-color: var(--primary);
+	height: 70vh;
+}
+
+#contact {
+	grid-area: contact;
+	background-color: var(--primary);
+	height: 70vh;
 }
 
 #site-footer {
 	grid-area: footer;
-	background-color: cadetblue;
+	background-color: var(--primary-dark);
+	height: 70vh;
 }
 
 .logo {
 	padding: 10px;
 	align-items: flex-start;
-	order: 1;
 }
 
 .main-nav {
 	text-align: center;
-	order: 2;
+	display: flex;
+	height: 60%;
+	flex-direction: column;
+	justify-content: space-evenly;
 }
 
 .nav-item {
 	line-height: 1.6em;
-	background-color: aliceblue;
 }
